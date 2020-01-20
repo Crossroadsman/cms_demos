@@ -72,6 +72,8 @@ INSTALLED_APPS = [
     'taggit',
     # End Wagtail
 
+    'blog.apps.BlogConfig',
+
 ]
 
 MIDDLEWARE = [
