@@ -64,6 +64,10 @@ Wagtail Demo
    - [ ] `STATIC_ROOT`
    - [ ] `MEDIA_ROOT` and `MEDIA_URL`
    - [ ] `WAGTAIL_SITE_NAME`
+7. Make Wagtail-specific changes to `urls.py`
+8. Perform a migration to create Wagtail-specific DB tables
+9. Create a new app following the instructions in [Your First Wagtail Site][http://docs.wagtail.io/en/v2.7.1/getting_started/tutorial.html] (note that we probably want to replace the
+   supplied `Page` class with our own `HomePage` class, remembering to also update the setting in the Wagtail Admin).
    
 
 
