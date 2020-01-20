@@ -56,9 +56,18 @@ Wagtail Demo
 2. Install Django ([<2.3][wagt01]): `pip install 'django <2.3'`
 3. Create a Django project: `django-admin startproject mysite .`
 4. Create custom user model (must inherit from AbstractBaseUser and PermissionsMixin (which AbstractUser already does))
-4. Install wagtail
+   (see the step-by-step instructions in [`official/users/models.py`][cmsd01])
+5. Install wagtail (`pip install wagtail`)
+6. Make wagtail-specific changes to `settings.py`:
+   - [ ] `INSTALLED_APPS`
+   - [ ] `MIDDLEWARE`
+   - [ ] `STATIC_ROOT`
+   - [ ] `MEDIA_ROOT` and `MEDIA_URL`
+   - [ ] `WAGTAIL_SITE_NAME`
+   
 
 
+[cmsd01]: https://github.com/Crossroadsman/cms_demos/blob/wagtail-official/wagtail/official/users/models.py
 [netg01]: https://www.netguru.com/blog/drupal-django-cms-wagtail-mezzanine-comparison-python-php
 [yout01]: https://www.youtube.com/watch?v=3UC1MNFOjEI
 [wagt01]: http://docs.wagtail.io/en/v2.7.1/getting_started/integrating_into_django.html
