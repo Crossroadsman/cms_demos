@@ -66,8 +66,9 @@ Wagtail Demo
    - [ ] `WAGTAIL_SITE_NAME`
 7. Make Wagtail-specific changes to `urls.py`
 8. Perform a migration to create Wagtail-specific DB tables
-9. Create a new app following the instructions in [Your First Wagtail Site][http://docs.wagtail.io/en/v2.7.1/getting_started/tutorial.html] (note that we probably want to replace the
-   supplied `Page` class with our own `HomePage` class, remembering to also update the setting in the Wagtail Admin).
+9. Create a new app following the instructions in [Your First Wagtail Site][wagt02] (starting at 
+   the [Start the server][wagt03] section) (note that we probably want to replace the supplied `Page` class with our
+   own `HomePage` class, remembering to also update the setting in the Wagtail Admin).
    
 
 
@@ -75,3 +76,5 @@ Wagtail Demo
 [netg01]: https://www.netguru.com/blog/drupal-django-cms-wagtail-mezzanine-comparison-python-php
 [yout01]: https://www.youtube.com/watch?v=3UC1MNFOjEI
 [wagt01]: http://docs.wagtail.io/en/v2.7.1/getting_started/integrating_into_django.html
+[wagt02]: http://docs.wagtail.io/en/v2.7.1/getting_started/tutorial.html
+[wagt03]: http://docs.wagtail.io/en/v2.7.1/getting_started/tutorial.html#start-the-server
