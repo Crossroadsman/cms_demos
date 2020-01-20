@@ -54,6 +54,24 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'users.apps.UsersConfig',
+
+    # Begin Wagtail
+    'wagtail.contrib.forms',
+    'wagtail.contrib.redirects',
+    'wagtail.embeds',
+    'wagtail.sites',
+    'wagtail.users',
+    'wagtail.snippets',
+    'wagtail.documents',
+    'wagtail.images',
+    'wagtail.search',
+    'wagtail.admin',
+    'wagtail.core',
+
+    'modelcluster',
+    'taggit',
+    # End Wagtail
+
 ]
 
 MIDDLEWARE = [
@@ -64,6 +82,10 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    # Begin Wagtail
+    'wagtail.core.middleware.SiteMiddleware',
+    'wagtail.contrib.redirects.middleware.RedirectMiddleware',
+    # End Wagtail
 ]
 
 ROOT_URLCONF = 'official.urls'
@@ -139,6 +161,12 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+MEDIA_URL = '/media/'
+
 # LOGIN_URL is where `login_required` will redirect users that are not logged in
 # (it will also pass the current path as a query string `?next=/some/path`)
 # This can be specified here. Alternatively, it can be substituted with a path
@@ -161,3 +189,5 @@ LOGIN_REDIRECT_URL = 'home'
 # view is rendered instead.
 # Also accepts named URL patterns
 LOGOUT_REDIRECT_URL = 'home'
+
+WAGTAIL_SITE_NAME = 'Offical Wagtail Demo'
