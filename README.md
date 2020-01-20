@@ -6,13 +6,15 @@ Comparison Table
 
 Aspect                          | Django CMS          | Mezzanine                | Wagtail
 --------------------------------|---------------------|--------------------------|--------
-Ownership Model                 |                     |                          |
+Ownership Model                 |                     |                          | Open Source (Managed by Torchbox)
 License                         |                     |                          |
 Models                          |                     |                          |
 Admin                           |                     |                          |
 Installation | `pip install djangocms-installer` then `djangocms mysite -p path/to/mysite` | `pip install mezzanine` then `mezzanine-project mysite` | `pip install wagtail` then `wagtail start mysite`
 Built-in Templates OOB          |                     | Yes (based on Bootstrap) | No
 Add to existing Django project? | Yes (most involved) | Yes (in-between)         | Yes (simplest)
+Known Incompatibilities         |                     |                          |
+Custom User Model               |                     |                          | Yes (as long as it inherits from `AbstractBaseUser` and `PermissionsMixin`)
 
 
 See also [Youtube: Comparing Wagtail, Django CMS and Mezzanine][yout01]
@@ -47,5 +49,16 @@ Maturity                        | Best                |                         
 See also [Drupal, Django CMS, Wagtail and Mezzanine Comparison - Python vs PHP for CMS][netg01]
 
 
+Wagtail Demo
+------------
+
+1. Create a project directory and venv
+2. Install Django ([<2.3][wagt01]): `pip install 'django <2.3'`
+3. Create a Django project: `django-admin startproject mysite .`
+4. Create custom user model (must inherit from AbstractBaseUser and PermissionsMixin (which AbstractUser already does))
+4. Install wagtail
+
+
 [netg01]: https://www.netguru.com/blog/drupal-django-cms-wagtail-mezzanine-comparison-python-php
 [yout01]: https://www.youtube.com/watch?v=3UC1MNFOjEI
+[wagt01]: http://docs.wagtail.io/en/v2.7.1/getting_started/integrating_into_django.html
