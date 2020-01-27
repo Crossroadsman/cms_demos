@@ -67,7 +67,7 @@ INSTALLED_APPS = [
     # end django CMS required installs
 ]
 
-SIDE_ID = 1  # required by `django.contrib.sites` for Django CMS
+SITE_ID = 1  # required by `django.contrib.sites` for Django CMS
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
