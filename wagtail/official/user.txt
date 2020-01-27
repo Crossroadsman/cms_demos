@@ -1,0 +1,2 @@
+username: wagtail
+password: testpassword
