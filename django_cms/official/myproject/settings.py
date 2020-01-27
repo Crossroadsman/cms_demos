@@ -64,12 +64,17 @@ INSTALLED_APPS = [
     'cms',
     'menus',
     'treebeard',
+    'sekizai',
     # end django CMS required installs
 ]
 
 SITE_ID = 1  # required by `django.contrib.sites` for Django CMS
 
 MIDDLEWARE = [
+    # begin DjangoCMS-recommended middleware (must be at start of list)
+    'cms.middleware.utils.ApphookReloadMiddleware',
+    # end DjangoCMS-recommended middleware
+
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -77,6 +82,14 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+
+    # begin DjangoCMS-required middleware
+    'django.middleware.locale.LocaleMiddleware',
+    'cms.middleware.user.CurrentUserMiddleware',
+    'cms.middleware.page.CurrentPageMiddleware',
+    'cms.middleware.toolbar.ToolbarMiddleware',
+    'cms.middleware.language.LanguageCookieMiddleware',
+    # end DjangoCMS-required middleware
 ]
 
 ROOT_URLCONF = 'myproject.urls'
@@ -92,6 +105,12 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+
+                # begin DjangoCMS-required context processors
+                'sekizai.context_processors.sekizai',
+                'cms.context_processors.cms_settings',
+                'django.template.context_processors.i18n',
+                # end DjangoCMS-required context processors
             ],
         },
     },
