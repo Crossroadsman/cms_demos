@@ -26,7 +26,6 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 # - configure `TEMPLATES` to have a project-level templates directory
 # - set the redirect links for login and logout
 
-
 import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -48,14 +47,27 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    # begin django CMS required installs:
+    'djangocms_admin_style',
+    # end django CMS required installs
+
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'users.apps.UsersConfig',
+    'users.apps.UsersConfig',  # custom user model
+
+    # begin django CMS required installs:
+    'django.contrib.sites',
+    'cms',
+    'menus',
+    'treebeard',
+    # end django CMS required installs
 ]
+
+SIDE_ID = 1  # required by `django.contrib.sites` for Django CMS
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -122,7 +134,12 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/2.2/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'en'  # changed from 'en-us' for Django CMS
+
+# Required by Django CMS
+LANGUAGES = [
+    ('en', 'English'),
+]
 
 TIME_ZONE = 'UTC'
 
